@@ -11,11 +11,13 @@ export class NewscoppyComponent implements OnInit {
   constructor(private myapi:ApiService) { 
     this.fetchData()
   }
+  load:boolean=false
 
 fetchData=()=>{
   this.myapi.view().subscribe(
     (data=>{
       this.newsData=data
+      this.load=true
     })
   )
 }
